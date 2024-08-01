@@ -4,6 +4,10 @@ const ObjectId = require("mongodb").ObjectId;
 
 let postRoutes = express.Router();
 
+// Middleware to parse JSON bodies
+postRoutes.use(express.json());
+
+
 // 1 - Retrieve All
 postRoutes.route("/posts").get(async (request, response) => {
     try {
